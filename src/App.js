@@ -1,24 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
-
+import './styles.scss'
+import { Button } from 'govuk-react'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
+            This is a test to check the style.
+            </label>
+          </h1>   
+      </div>   
+      <input class="govuk-input" id="event-name" name="event-name" type="text"/>
+      <Button>Click Me!</Button> 
+</div>
   );
 }
 
