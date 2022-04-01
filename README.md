@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm install`
+
+run to this command to use the styled component from gov-react, install all relevant modules.
+
 ### `npm start`
 
 Runs the app in the development mode.\
