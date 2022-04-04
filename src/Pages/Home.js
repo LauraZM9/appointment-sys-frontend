@@ -1,8 +1,14 @@
 import React from "react"
-
+import Header from "../component/header";
+import { Button,ButtonArrow } from 'govuk-react'
+import { useNavigate } from 'react-router-dom'
+import ChooseService from "./ChooseService";
 function Home() { 
+  const navigate = useNavigate();
+  navigate('/ChooseService')
 return (
-    <div>
+    <div className= "govuk-header__container govuk-width-container">
+      <Header />
       <h1>Strategy and Advice </h1>
       <p> Use this service to:</p>
       <ul>
@@ -12,7 +18,9 @@ return (
       
       </ul>
       <p>Click below to book an appointment with our strategy staff</p>
-      <button> Start now</button>
+      <Button onClick={navigate} icon={<ButtonArrow /> } >
+        Start now
+      </Button>
       </div>
     );
   }
