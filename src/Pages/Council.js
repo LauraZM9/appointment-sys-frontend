@@ -1,25 +1,30 @@
 import React from "react"
-
+import { InputField,Link } from 'govuk-react'
+import { Button} from 'govuk-react'
+import Header from "../component/header";
 function Council() { 
 return (
-    <div>
+  <div className= "govuk-header__container govuk-width-container">
+  <Header />
       <h1>Booking Details </h1>
-      <form>
-      <label>Full name:
-        <input type="text" />
-      </label> <br></br>
-      <label>Council:
-        <input type="text" />
-      </label> <br></br>
-      <label>Email Address:
-        <input type="text" />
-      </label> <br></br>
-      </form>
+      <InputField>
+       Full name
+      </InputField>
+      <InputField>
+       Council
+      </InputField> 
+      <InputField >
+        Email
+      </InputField> 
+<Button>
+        Continue
+</Button>  
+<Link href="test">
+  Back
+</Link>
+</div>
+  );
 
-      <button> Continue </button>
-      <button> Back</button>
-      </div>
-    );
-  }
+}
   
   export default Council;
