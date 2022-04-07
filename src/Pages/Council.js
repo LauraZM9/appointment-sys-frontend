@@ -16,6 +16,12 @@ return (
       <InputField >
         Email
       </InputField> 
+      <InputField >
+        Job title
+      </InputField> 
+      <InputField >
+        Phone number
+      </InputField> 
 <Button>
         Continue
 </Button>  
