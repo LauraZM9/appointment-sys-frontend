@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom'
 
 function ChooseService() {
     const navigate = useNavigate();
-    navigate('/Council')
+    navigate('/BookingDetail')
+    
     return (    
       <div className= "govuk-header__container govuk-width-container">
         <Header/>
