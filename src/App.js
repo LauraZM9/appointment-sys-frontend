@@ -3,7 +3,15 @@ import Home from "./Pages/Home";
 import Council from "./Pages/Council"
 import ChooseService from "./Pages/ChooseService";
 import BookingDetail from "./Pages/BookingDetail";
+import Summary from "./Pages/Summary";
+import React, {useState} from "react"
+
 function App() {
+    const [name, setName] = useState('');
+    const [council, setCouncilName] = useState('');
+    const [email, setEmail] = useState('');
+    const [job, setJob] = useState('');
+    const [phoneNum, setPhoneNumber] = useState('');
   return (
  
       <Router>
@@ -11,7 +19,10 @@ function App() {
               <Route path="/" element ={<Home />} />
               <Route path="/council" element ={<Council />} />
               <Route path="/ChooseService" element ={<ChooseService />} />
-              <Route path="/BookingDetail" element ={<BookingDetail />} />
+              <Route path="/BookingDetail" element ={<BookingDetail name={name} setName={setName} council={council} setCouncilName={setCouncilName} email={email} setEmail={setEmail} job={job} setJob={setJob}
+              phone={phoneNum} setPhone={setPhoneNumber} />} />
+              <Route path="/Summary" element ={<Summary name={name} setName={setName} council={council} setCouncilName={setCouncilName} email={email} setEmail={setEmail} job={job} setJob={setJob}
+              phone={phoneNum} setPhone={setPhoneNumber} />} />
           </Routes>
       </Router>
 

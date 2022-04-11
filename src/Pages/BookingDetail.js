@@ -3,14 +3,18 @@ import { InputField,Link } from 'govuk-react'
 import { Button} from 'govuk-react'
 import Header from "../component/header";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const baseURL = " "
-function BookingDetail() { 
-  const [name, setName] = useState('');
-  const [council, setCouncilName] = useState('');
-  const [email, setEmail] = useState('');
-  const [job, setJob] = useState('');
-  const [phoneNum, setPhoneNumber] = useState('');
+function BookingDetail({name, setName, council, setCouncilName, email, setEmail, job, setJob, phoneNum, setPhoneNumber}) { 
+  // const [name, setName] = useState('');
+  // const [council, setCouncilName] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [job, setJob] = useState('');
+  // const [phoneNum, setPhoneNumber] = useState('');
+
+  const navigate = useNavigate();
+ 
   
   const handleConfirm = (e) => {
       e.preventDefault();
@@ -68,7 +72,7 @@ return (
       >
         Phone number
       </InputField> 
-<Button onClick={handleConfirm}>
+<Button onClick={ navigate('/Summary')} >
         Continue
 </Button>  
 <Link href="test">
