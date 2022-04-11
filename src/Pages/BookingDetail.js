@@ -14,25 +14,41 @@ function BookingDetail() {
   
   const handleConfirm = (e) => {
       e.preventDefault();
-      const bookingData = {name,council,email,job,phoneNum};
-      console.log(bookingData);
-      axios
-      .post("https://localhost:5000/api/bookingdetail", bookingData)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        if (error.response) {
-          console.log(error.response);
-          console.log("server responded");
-        } else if (error.request) {
-          console.log("network error");
-        } else {
-          console.log(error);
-        }
-      });
+      // const bookingData = {name,council,email,job,phoneNum};
+      // console.log(bookingData);
+      axios.get('https://localhost:7118/booking/3') 
+        .then((response) => 
+        { 
+          console.log(response.data); 
+          console.log(response.status); 
+          console.log(response.statusText); 
+          console.log(response.headers);
+          console.log(response.config); 
+        });
 
   };
+
+    // const handleConfirm = (e) => {
+  //     e.preventDefault();
+  //     const bookingData = {name,council,email,job,phoneNum};
+  //     console.log(bookingData);
+  //     axios
+  //     .post("https://localhost:5000/api/bookingdetail", bookingData)
+  //     .then((response) => {
+  //       console.log(response);
+  //     })
+  //     .catch((error) => {
+  //       if (error.response) {
+  //         console.log(error.response);
+  //         console.log("server responded");
+  //       } else if (error.request) {
+  //         console.log("network error");
+  //       } else {
+  //         console.log(error);
+  //       }
+  //     });
+
+  // };
 
 return (
   <div className= "govuk-header__container govuk-width-container">
