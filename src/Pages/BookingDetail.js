@@ -4,9 +4,10 @@ import { Button} from 'govuk-react'
 import Header from "../component/header";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import DatePicker from 'sassy-datepicker';
 
-const baseURL = " "
-function BookingDetail({name, setName, council, setCouncilName, email, setEmail, job, setJob, phoneNum, setPhoneNumber}) { 
+// const baseURL = " "
+function BookingDetail({name, setName, council, setCouncilName, email, setEmail, job, setJob,phoneNum, setPhoneNumber,Date,setDate}) { 
   // const [name, setName] = useState('');
   // const [council, setCouncilName] = useState('');
   // const [email, setEmail] = useState('');
@@ -14,11 +15,17 @@ function BookingDetail({name, setName, council, setCouncilName, email, setEmail,
   // const [phoneNum, setPhoneNumber] = useState('');
 
   const navigate = useNavigate();
+  const onChange = (date) => {
+    console.log(date.toString());
+    setDate(date.toString());
+  };
  
   
-  const handleConfirm = (e) => {
+  const handleConfirm =  async (e) => {
       e.preventDefault();
-      const bookingData = {name,council,email,job,phoneNum};
+   
+      const bookingData = {name,council,email,job,phoneNum,Date};
+      navigate('/Summary', bookingData)
       console.log(bookingData);
       axios
       .post("https://localhost:5000/api/bookingdetail", bookingData)
@@ -43,8 +50,8 @@ return (
   <Header />
       <h1>Booking Details </h1>
       <InputField
-       value={name}
-       onChange={(e) => setName(e.target.value)}
+      value={name}
+      onChange={(e) => setName(e.target.value)}
       >
        Full name
       </InputField>
@@ -72,10 +79,16 @@ return (
       >
         Phone number
       </InputField> 
-<Button onClick={ navigate('/Summary')} >
+
+     <h2> Select a date </h2>
+     <DatePicker onChange={onChange} />
+     <h3>{Date}</h3> 
+     
+
+   <Button onClick={handleConfirm} >
         Continue
 </Button>  
-<Link href="test">
+<Link to="/">
   Back
 </Link>
 </div>

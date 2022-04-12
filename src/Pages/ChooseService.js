@@ -6,15 +6,16 @@ import { useNavigate } from 'react-router-dom'
 function ChooseService() {
     const navigate = useNavigate();
     navigate('/BookingDetail')
-    
     return (    
       <div className= "govuk-header__container govuk-width-container">
         <Header/>
+        <h2>Choose service to book</h2>
+        <div>
         <Select
   input={{
   name: 'group1',
   }}
-  label="Choose from service"
+  // label="Choose from service"
 >
   <option value="0">
     Strategy Advice Service
@@ -26,14 +27,16 @@ function ChooseService() {
     Test 2
   </option>
 </Select>
+</div>
 
-        <Button onClick = {navigate}>
+        <Button onClick = {navigate} >
         Continue
         </Button>
         <Link href="src/Pages/Home.js">
         Back
        </Link>
       </div>
+      
     )
 }
 

@@ -1,16 +1,23 @@
 import React from 'react';
+import Header from '../component/header';
 
-const Summary = ({name, setName, council, setCouncilName, email, setEmail, job, setJob, phoneNum, setPhoneNumber}) => {
+const Summary = ({name, council,  email,  job, phoneNum,Date }) => {
 
 
     return (
-        <div>
-        <p>name here: {name}</p>
-        <p>council: {council}</p>
-        <p>job: {job}</p>
-        <p>email: {email}</p>
-        <p>phone: {phoneNum}</p>
       
+        <div className= "govuk-header__container govuk-width-container">
+        <Header />
+        <div>
+        <h1>Your Booking Summary</h1>
+        <p>Name: {name}</p>
+        <p>Council: {council}</p>
+        <p>Job: {job}</p>
+        <p>Email: {email}</p>
+        <p>Phone: {phoneNum}</p>
+        <p>Date : {Date}</p>
+      
+        </div>
         </div>
     );
 };
