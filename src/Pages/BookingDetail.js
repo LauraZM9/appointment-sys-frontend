@@ -6,18 +6,18 @@ import axios from "axios";
 
 const baseURL = " "
 function BookingDetail() { 
-  const [name, setName] = useState('');
-  const [council, setCouncilName] = useState('');
-  const [email, setEmail] = useState('');
-  const [job, setJob] = useState('');
-  const [phoneNum, setPhoneNumber] = useState('');
+  const [Name, setName] = useState('');
+  const [Council, setCouncilName] = useState('');
+  const [Email, setEmail] = useState('');
+  const [JobTitle, setJob] = useState('');
+  const [PhoneNumber, setPhoneNumber] = useState('');
   
   const handleConfirm = (e) => {
       e.preventDefault();
-      const bookingData = {name,council,email,job,phoneNum};
+      const bookingData = {Name, Council, Email, JobTitle, PhoneNumber};
       console.log(bookingData);
       axios
-      .post("https://localhost:5000/api/bookingdetail", bookingData)
+      .post("https://appointment-sys-api.herokuapp.com/booking", bookingData)
       .then((response) => {
         console.log(response);
       })
@@ -39,31 +39,31 @@ return (
   <Header />
       <h1>Booking Details </h1>
       <InputField
-       value={name}
+       value={Name}
        onChange={(e) => setName(e.target.value)}
       >
        Full name
       </InputField>
       <InputField
-      value={council}
+      value={Council}
       onChange={(e) => setCouncilName(e.target.value)}
       >
        Council
       </InputField> 
       <InputField
-      value={email}
+      value={Email}
       onChange={(e) => setEmail(e.target.value)}
       >
         Email
       </InputField> 
       <InputField 
-      value={job}
+      value={JobTitle}
       onChange={(e) => setJob(e.target.value)}
       >
         Job title
       </InputField> 
       <InputField
-      value={phoneNum}
+      value={PhoneNumber}
       onChange={(e) => setPhoneNumber(e.target.value)}
       >
         Phone number
