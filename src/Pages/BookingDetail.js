@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import { InputField,Link } from 'govuk-react'
 import { Button} from 'govuk-react'
 import Header from "../component/header";
@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import DatePicker from 'sassy-datepicker';
 
 // const baseURL = " "
-function BookingDetail({name, setName, council, setCouncilName, email, setEmail, job, setJob,phoneNum, setPhoneNumber,Date,setDate}) { 
+function BookingDetail({name, setName, council, setCouncilName, email, setEmail, job, setJob, phone, setPhoneNumber,Date,setDate}) { 
   // const [name, setName] = useState('');
   // const [council, setCouncilName] = useState('');
   // const [email, setEmail] = useState('');
@@ -24,25 +24,8 @@ function BookingDetail({name, setName, council, setCouncilName, email, setEmail,
   const handleConfirm =  async (e) => {
       e.preventDefault();
    
-      const bookingData = {name,council,email,job,phoneNum,Date};
+      const bookingData = {name,council,email,job,phone,Date};
       navigate('/Summary', bookingData)
-      console.log(bookingData);
-      axios
-      .post("https://localhost:5000/api/bookingdetail", bookingData)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        if (error.response) {
-          console.log(error.response);
-          console.log("server responded");
-        } else if (error.request) {
-          console.log("network error");
-        } else {
-          console.log(error);
-        }
-      });
-
   };
 
 return (
@@ -74,7 +57,7 @@ return (
         Job title
       </InputField> 
       <InputField
-      value={phoneNum}
+      value={phone}
       onChange={(e) => setPhoneNumber(e.target.value)}
       >
         Phone number
