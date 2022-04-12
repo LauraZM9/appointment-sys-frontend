@@ -1,24 +1,21 @@
 import React from "react"
-import { InputField,Link } from 'govuk-react'
+import { Input, InputField,Link } from 'govuk-react'
 import { Button} from 'govuk-react'
 import Header from "../component/header";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import DatePicker from 'sassy-datepicker';
+import { Calendar } from "react-calendar";
 
-// const baseURL = " "
 function BookingDetail({name, setName, council, setCouncilName, email, setEmail, job, setJob, phone, setPhoneNumber,Date,setDate}) { 
-  // const [name, setName] = useState('');
-  // const [council, setCouncilName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [job, setJob] = useState('');
-  // const [phoneNum, setPhoneNumber] = useState('');
 
   const navigate = useNavigate();
   const onChange = (date) => {
     console.log(date.toString());
-    setDate(date.toString());
+    const time = ", 14:00 pm "
+    setDate(date.toString().substring(0,16).concat(time));
   };
+  
  
   
   const handleConfirm =  async (e) => {
@@ -64,14 +61,14 @@ return (
       </InputField> 
 
      <h2> Select a date </h2>
-     <DatePicker onChange={onChange} />
-     <h3>{Date}</h3> 
-     
-
+     <DatePicker onChange={onChange}/>
+    <Input value={Date} />
+    
+ 
    <Button onClick={handleConfirm} >
         Continue
-</Button>  
-<Link to="/">
+  </Button>  
+ <Link to="/">
   Back
 </Link>
 </div>
