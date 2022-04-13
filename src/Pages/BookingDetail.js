@@ -36,19 +36,19 @@ return (
        Full name
       </InputField>
       <InputField
-      value={council}
+      value={Council}
       onChange={(e) => setCouncilName(e.target.value)}
       >
        Council
       </InputField> 
       <InputField
-      value={email}
+      value={Email}
       onChange={(e) => setEmail(e.target.value)}
       >
         Email
       </InputField> 
       <InputField 
-      value={job}
+      value={JobTitle}
       onChange={(e) => setJob(e.target.value)}
       >
         Job title
