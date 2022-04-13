@@ -16,7 +16,7 @@ const Summary = ({name, council,  email,  job, phone,Date }) => {
             Date : Date
          });
         console.log(bookingData);
-        axios.post('https://httpbin.org/post', bookingData, {
+        axios.post('https://appointment-sys-api.herokuapp.com/booking', bookingData, {
         headers: {
          // Overwrite Axios's automatically set Content-Type
         'Content-Type': 'application/json'
