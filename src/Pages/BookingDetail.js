@@ -1,37 +1,28 @@
-import React, {useState} from "react"
-import { InputField,Link } from 'govuk-react'
+import React from "react"
+import { Input, InputField,Link } from 'govuk-react'
 import { Button} from 'govuk-react'
 import Header from "../component/header";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import DatePicker from 'sassy-datepicker';
+import { Calendar } from "react-calendar";
 
-const baseURL = " "
-function BookingDetail() { 
-  const [Name, setName] = useState('');
-  const [Council, setCouncilName] = useState('');
-  const [Email, setEmail] = useState('');
-  const [JobTitle, setJob] = useState('');
-  const [PhoneNumber, setPhoneNumber] = useState('');
+function BookingDetail({name, setName, council, setCouncilName, email, setEmail, job, setJob, phone, setPhoneNumber,Date,setDate}) { 
+
+  const navigate = useNavigate();
+  const onChange = (date) => {
+    console.log(date.toString());
+    const time = ", 14:00 pm "
+    setDate(date.toString().substring(0,16).concat(time));
+  };
   
-  const handleConfirm = (e) => {
+ 
+  
+  const handleConfirm =  async (e) => {
       e.preventDefault();
-      const bookingData = {Name, Council, Email, JobTitle, PhoneNumber};
-      console.log(bookingData);
-      axios
-      .post("https://appointment-sys-api.herokuapp.com/booking", bookingData)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        if (error.response) {
-          console.log(error.response);
-          console.log("server responded");
-        } else if (error.request) {
-          console.log("network error");
-        } else {
-          console.log(error);
-        }
-      });
-
+   
+      const bookingData = {name,council,email,job,phone,Date};
+      navigate('/Summary', bookingData)
   };
 
 return (
@@ -39,8 +30,8 @@ return (
   <Header />
       <h1>Booking Details </h1>
       <InputField
-       value={Name}
-       onChange={(e) => setName(e.target.value)}
+      value={name}
+      onChange={(e) => setName(e.target.value)}
       >
        Full name
       </InputField>
@@ -63,15 +54,21 @@ return (
         Job title
       </InputField> 
       <InputField
-      value={PhoneNumber}
+      value={phone}
       onChange={(e) => setPhoneNumber(e.target.value)}
       >
         Phone number
       </InputField> 
-<Button onClick={handleConfirm}>
+
+     <h2> Select a date </h2>
+     <DatePicker onChange={onChange}/>
+    <Input value={Date} />
+    
+ 
+   <Button onClick={handleConfirm} >
         Continue
-</Button>  
-<Link href="test">
+  </Button>  
+ <Link to="/">
   Back
 </Link>
 </div>
