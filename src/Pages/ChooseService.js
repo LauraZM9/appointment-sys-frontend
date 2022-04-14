@@ -6,6 +6,10 @@ import { useNavigate } from 'react-router-dom'
 function ChooseService() {
     const navigate = useNavigate();
     navigate('/BookingDetail')
+
+    // const navigateBack = useNavigate()
+    const onClickHandler = () => navigate(`/`)
+
     return (    
       <div className= "govuk-header__container govuk-width-container">
         <Header/>
@@ -32,9 +36,16 @@ function ChooseService() {
         <Button onClick = {navigate} >
         Continue
         </Button>
-        <Link href="src/Pages/Home.js">
+        <Link onClick = {onClickHandler} >
         Back
-       </Link>
+        </Link>
+    
+        
+        
+
+        {/* <Link href="src/Pages/Home.js">
+        Back
+       </Link> */}
       </div>
       
     )

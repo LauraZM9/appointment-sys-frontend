@@ -3,6 +3,8 @@ import Header from "../component/header";
 import { Button,ButtonArrow } from 'govuk-react'
 import { useNavigate } from 'react-router-dom'
 import ChooseService from "./ChooseService";
+
+
 function Home() { 
  const navigate = useNavigate()
  const onClickHandler = () => navigate(`./ChooseService`)
@@ -10,12 +12,12 @@ function Home() {
 return (
     <div className= "govuk-header__container govuk-width-container">
       <Header />
-      <h1>Strategy and Advice </h1>
+      <h1>Book an appointment with DHULC </h1>
       <p> Use this service to:</p>
       <ul>
-      <li>get strategic advice for your council</li>
-      <li>get information from one of our strategy staff </li>
-      <li>book an appoinment</li>
+      <li>get advice for your council</li>
+      <li>get information from one of our specialist staff </li>
+      <li>book an appointment</li>
       
       </ul>
       <p>Click below to book an appointment with our strategy staff</p>
