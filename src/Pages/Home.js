@@ -4,8 +4,9 @@ import { Button,ButtonArrow } from 'govuk-react'
 import { useNavigate } from 'react-router-dom'
 import ChooseService from "./ChooseService";
 function Home() { 
-  const navigate = useNavigate();
-  navigate('/ChooseService')
+ const navigate = useNavigate()
+ const onClickHandler = () => navigate(`./ChooseService`)
+  
 return (
     <div className= "govuk-header__container govuk-width-container">
       <Header />
@@ -18,7 +19,7 @@ return (
       
       </ul>
       <p>Click below to book an appointment with our strategy staff</p>
-      <Button onClick={navigate} icon={<ButtonArrow /> } >
+      <Button onClick={onClickHandler} icon={<ButtonArrow /> } >
         Start now
       </Button>
       </div>
