@@ -1,4 +1,5 @@
 import Header from '../component/header'
+import { Button, Heading, Paragraph } from 'govuk-react'
 import React from 'react'
 
 function Confirmation() {
@@ -13,6 +14,10 @@ function Confirmation() {
             <strong>HDJ2123F</strong>
           </div>
         </div>
+        <Heading size='MEDIUM'>Here's what happens next</Heading>
+        <br />
+        <Paragraph>Thank you for your booking! We look forward to seeing you soon.</Paragraph>
+        <Button>Home</Button>
       </div>
     </div>
   )
