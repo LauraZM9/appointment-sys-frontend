@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, InputField, Link } from 'govuk-react'
+import { Input, InputField, Link, Heading } from 'govuk-react'
 import { Button } from 'govuk-react'
 import Header from '../component/header'
 import axios from 'axios'
@@ -25,7 +25,7 @@ function BookingDetail({ name, setName, council, setCouncilName, email, setEmail
   return (
     <div className='govuk-header__container govuk-width-container'>
       <Header />
-      <h1>Booking Details </h1>
+      <Heading size='MEDIUM'>Booking Details </Heading>
       <InputField value={name} onChange={(e) => setName(e.target.value)}>
         Full name
       </InputField>
@@ -42,7 +42,7 @@ function BookingDetail({ name, setName, council, setCouncilName, email, setEmail
         Phone number
       </InputField>
 
-      <h2> Select a date </h2>
+      <Heading size='SMALL'> Select a date </Heading>
       <DatePicker onChange={onChange} />
       <p></p>
       <Input value={Date} />
