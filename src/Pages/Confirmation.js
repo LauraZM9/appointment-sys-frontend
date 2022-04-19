@@ -7,19 +7,20 @@ function Confirmation() {
   const navigate = useNavigate()
   navigate('/')
   return (
-    <div>
-      <div className='govuk-header__container govuk-width-container'>
-        <Header />
-        <Panel title='Application complete'>
+    <div className='govuk-header__container govuk-width-container'>
+      <Header />
+      <div class='govuk-panel govuk-panel--confirmation'>
+        <h1 class='govuk-panel__title'>Application complete</h1>
+        <div class='govuk-panel__body'>
           Your reference number
           <br />
-          <strong>DHLUC2123F</strong>
-        </Panel>
-        <Heading size='MEDIUM'>Here's what happens next</Heading>
-        <br />
-        <Paragraph>Thank you for your booking! We look forward to seeing you soon.</Paragraph>
-        <Button onClick={navigate}>Home</Button>
+          <strong>HDJ2123F</strong>
+        </div>
       </div>
+      <Heading size='MEDIUM'>Here's what happens next</Heading>
+      <br />
+      <Paragraph>Thank you for your booking! We look forward to seeing you soon.</Paragraph>
+      <Button onClick={navigate}>Home</Button>
     </div>
   )
 }

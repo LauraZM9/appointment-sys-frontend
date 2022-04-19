@@ -51,7 +51,7 @@ function BookingDetail({ name, setName, council, setCouncilName, email, setEmail
       <Button onClick={handleConfirm}>Continue</Button>
       <p></p>
       <div>
-        <a href='http://localhost:3000/ChooseService' class='govuk-back-link'>
+        <a href='http://localhost:3000/Home' class='govuk-back-link'>
           Back
         </a>
       </div>

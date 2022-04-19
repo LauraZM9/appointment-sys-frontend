@@ -6,7 +6,7 @@ import ChooseService from './ChooseService'
 
 function Home() {
   const navigate = useNavigate()
-  navigate('/ChooseService')
+  const onClickHandler = () => navigate(`/BookingDetail`)
   return (
     <div>
       <div className='govuk-header__container govuk-width-container'>
@@ -19,9 +19,15 @@ function Home() {
           <ListItem>book an appointment </ListItem>
         </UnorderedList>
 
-        <Button onClick={navigate} icon={<ButtonArrow />}>
+        <Button onClick={onClickHandler} icon={<ButtonArrow />}>
           Start now
         </Button>
+        <p></p>
+        <div>
+          <a href='http://localhost:3000' class='govuk-back-link'>
+            Back
+          </a>
+        </div>
       </div>
     </div>
   )
