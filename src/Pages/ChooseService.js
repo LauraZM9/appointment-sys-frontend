@@ -1,14 +1,13 @@
-import { Button,ButtonArrow, Select,Link  } from 'govuk-react'
+import { Button,ButtonArrow, Select,Link, BackLink  } from 'govuk-react'
 import React from 'react'
 import Header from '../component/header';
 import { useNavigate } from 'react-router-dom'
 
 function ChooseService() {
     const navigate = useNavigate();
-    navigate('/BookingDetail')
 
     // const navigateBack = useNavigate()
-    const onClickHandler = () => navigate(`/`)
+    const onClickHandler = () => navigate(`/BookingDetail`)
 
     return (    
       <div className= "govuk-header__container govuk-width-container">
@@ -16,9 +15,9 @@ function ChooseService() {
         <h2>Choose service to book</h2>
         <div>
         <Select
-  input={{
-  name: 'group1',
-  }}
+        input={{
+         name: 'group1',
+         }}
   // label="Choose from service"
 >
   <option value="0">
@@ -30,22 +29,17 @@ function ChooseService() {
   <option value="2">
     Test 2
   </option>
-</Select>
-</div>
-
-        <Button onClick = {navigate} >
+  </div>
+        <p></p>
+        <div>        <Button onClick = {onClickHandler} >
         Continue
-        </Button>
-        <Link onClick = {onClickHandler} >
-        Back
-        </Link>
-    
-        
-        
-
-        {/* <Link href="src/Pages/Home.js">
-        Back
-       </Link> */}
+        </Button>        
+      </div>
+<a href="http://localhost:3000/" class="govuk-back-link">Back</a>
+        {/* <BackLink
+          onClick={onClickHandler}>
+  Back
+</BackLink> */}
       </div>
       
     )
