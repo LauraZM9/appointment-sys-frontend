@@ -24,10 +24,11 @@ function Header() {
                   ></path>
                 </svg>
 
-                <span class='govuk-header__logotype-text'>GOV.UK</span>
+                <span class='govuk-header__logotype-text'>GOV.UK </span>
               </span>
             </a>
           </div>
+          <span> Department for Levelling Up, Housing and Communities </span>
         </div>
       </header>
     </div>
