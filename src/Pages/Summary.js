@@ -2,10 +2,14 @@ import { Button } from 'govuk-react'
 import React from 'react'
 import Header from '../component/header'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const Summary = ({ name, council, email, job, phone, Date }) => {
+  const navigate = useNavigate()
+
   const handleConfirm = async (e) => {
     e.preventDefault()
+    navigate('/Confirmation')
     const bookingData = JSON.stringify({ Name: name, Council: council, Email: email, Job: job, Phone: phone, Date: Date })
     console.log(bookingData)
     axios

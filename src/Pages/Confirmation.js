@@ -1,8 +1,11 @@
 import Header from '../component/header'
 import { Button, Heading, Paragraph } from 'govuk-react'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Confirmation() {
+  const navigate = useNavigate()
+  navigate('/')
   return (
     <div>
       <div className='govuk-header__container govuk-width-container'>
@@ -17,7 +20,7 @@ function Confirmation() {
         <Heading size='MEDIUM'>Here's what happens next</Heading>
         <br />
         <Paragraph>Thank you for your booking! We look forward to seeing you soon.</Paragraph>
-        <Button>Home</Button>
+        <Button onClick={navigate}>Home</Button>
       </div>
     </div>
   )
