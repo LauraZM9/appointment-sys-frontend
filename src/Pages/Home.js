@@ -1,38 +1,33 @@
 import React from 'react'
 import Header from '../component/header'
-import { Button, ButtonArrow, Footer, TopNav } from 'govuk-react'
+import { Button, ButtonArrow, Footer, TopNav, H2, Paragraph, UnorderedList, ListItem } from 'govuk-react'
 import { useNavigate } from 'react-router-dom'
 import ChooseService from './ChooseService'
 
 function Home() {
   const navigate = useNavigate()
-  navigate('/ChooseService')
+  const onClickHandler = () => navigate(`/BookingDetail`)
   return (
     <div>
       <div className='govuk-header__container govuk-width-container'>
         <Header />
-        <h1>Strategy and Advice </h1>
-        <p> Use this service to:</p>
-        <ul>
-          <li>get strategic advice for your council</li>
-          <li>get information from one of our strategy staff </li>
-          <li>book an appoinment</li>
-        </ul>
-        <p>Click below to book an appointment with our strategy staff</p>
-        <Button onClick={navigate} icon={<ButtonArrow />}>
+        <H2>Strategy and Advice </H2>
+        <Paragraph> Use this service to:</Paragraph>
+        <UnorderedList>
+          <ListItem>get strategic advice for your council</ListItem>
+          <ListItem>get information from one of our strategy staff</ListItem>
+          <ListItem>book an appointment </ListItem>
+        </UnorderedList>
+
+        <Button onClick={onClickHandler} icon={<ButtonArrow />}>
           Start now
         </Button>
-        {/* <Footer
-          copyright={{
-            image: {
-              height: 102,
-              src: 'static/media/govuk-crest.05968778.png',
-              width: 125,
-            },
-            link: 'https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/',
-            text: 'Crown copyright',
-          }}
-        /> */}
+        <p></p>
+        <div>
+          <a href='http://localhost:3000' class='govuk-back-link'>
+            Back
+          </a>
+        </div>
       </div>
     </div>
   )
