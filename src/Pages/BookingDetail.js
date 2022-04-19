@@ -41,7 +41,7 @@ function BookingDetail({ name, setName, council, setCouncilName, email, setEmail
       <InputField value={phone} onChange={(e) => setPhoneNumber(e.target.value)}>
         Phone number
       </InputField>
-
+      <br />
       <Heading size='SMALL'> Select a date </Heading>
       <DatePicker onChange={onChange} />
       <p></p>
