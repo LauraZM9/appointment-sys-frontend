@@ -1,4 +1,4 @@
-import { Button, ButtonArrow, Select, Link, BackLink } from 'govuk-react'
+import { Button, ButtonArrow, Select, Link, BackLink, Heading } from 'govuk-react'
 import React from 'react'
 import Header from '../component/header'
 import { useNavigate } from 'react-router-dom'
@@ -12,8 +12,8 @@ function ChooseService() {
   return (
     <div className='govuk-header__container govuk-width-container'>
       <Header />
-      <h2>Choose service to book</h2>
       <div>
+        <Heading size='MEDIUM'>Choose service to book</Heading>
         <Select
           input={{
             name: 'group1',
